@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.engineering.novel.mapper.AuthorIncomeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="org.example.engineering.novel.entity.AuthorIncome">
+        <id column="id" property="id" />
+        <result column="author_id" property="authorId" />
+        <result column="book_id" property="bookId" />
+        <result column="income_month" property="incomeMonth" />
+        <result column="pre_tax_income" property="preTaxIncome" />
+        <result column="after_tax_income" property="afterTaxIncome" />
+        <result column="pay_status" property="payStatus" />
+        <result column="confirm_status" property="confirmStatus" />
+        <result column="detail" property="detail" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, author_id, book_id, income_month, pre_tax_income, after_tax_income, pay_status, confirm_status, detail, create_time, update_time
+    </sql>
+
+</mapper>
