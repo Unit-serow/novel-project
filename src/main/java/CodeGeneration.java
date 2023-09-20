@@ -26,7 +26,7 @@ public class CodeGeneration {
             }
         };
 
-        DataSourceConfig dsc = new DataSourceConfig.Builder("jdbc:mysql://localhost:3306/testdatabase?&useSSL=true&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai","root","123456")
+        DataSourceConfig dsc = new DataSourceConfig.Builder("jdbc:mysql://localhost:3307/novel?&useSSL=true&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai","root","123456")
                 .dbQuery(mySqlQuery).build();
         //通过datasourceConfig创建AutoGenerator
         AutoGenerator generator = new AutoGenerator(dsc);
@@ -51,14 +51,14 @@ public class CodeGeneration {
          */
         PackageConfig packages = new PackageConfig.Builder()
                 .entity("entity")//实体类包名
-                .parent("com.example.demo")//父包名。如果为空，将下面子包名必须写全部， 否则就只需写子包名
+                .parent("org.example.engineering.novel")//父包名。如果为空，将下面子包名必须写全部， 否则就只需写子包名
                 .controller("controller")//控制层包名
                 .mapper("mapper")//mapper层包名
                 .xml("mapper.xml")//数据访问层xml包名
                 .service("service")//service层包名
                 .serviceImpl("service.impl")//service实现类包名
                 .other("output")//输出自定义文件时的包名
-                .pathInfo(Collections.singletonMap(OutputFile.mapperXml, projectPath + "/src/main/java/com/example/demo/mapper")) //路径配置信息,就是配置各个文件模板的路径信息,这里以mapper.xml为例
+                .pathInfo(Collections.singletonMap(OutputFile.mapperXml, projectPath + "/src/main/java/org/example/engineering/novel/mapper")) //路径配置信息,就是配置各个文件模板的路径信息,这里以mapper.xml为例
                 .build();
         /**
          * 模板配置
